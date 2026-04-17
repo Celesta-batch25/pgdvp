@@ -157,7 +157,7 @@ h1, h2, h3, .main-title, .btn-traditional {
 .hero-image {
     position: absolute;
     inset: 0;
-    background: url('assets/_MG_1246-1.jpg') center/cover no-repeat;
+    background: url('Assets/_MG_1246-1.jpg') center/cover no-repeat;
     opacity: 0.4; /* Matches original 30-40% opacity request */
     z-index: -1;
 }
