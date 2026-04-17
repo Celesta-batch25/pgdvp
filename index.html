@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prefects' Guild | Dharmapala Vidyalaya</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lora:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lora:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;700&display=swap"
+        rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <div class="top-accent-bar"></div>
@@ -15,20 +19,37 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo-area">
-                <img src="Assets/pglogo.png" alt="School Logo" class="nav-logo">
-                <div class="logo-text">
-                    <span class="main-title">PREFECTS' GUILD</span>
-                    <span class="sub-title">Dharmapala Vidyalaya - Pannipitiya</span>
-                </div>
+                <img src="Assets/pglogo.png" alt="School Logo" class="nav-logo" data-aos="fade-down">
+                <div class="logo-text"></div>
             </div>
+            <button class="mobile-menu-toggle" aria-label="Open Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">Our Mission</a></li>
                 <li><a href="#leadership">Leadership</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="past-committees.html">Past Committees</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
+
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu-content">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Our Mission</a></li>
+                <li><a href="#leadership">Leadership</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="past-committees.html">Past Committees</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
 
     <header id="home" class="hero">
         <div class="hero-image"></div>
@@ -47,8 +68,11 @@
             <div class="container">
                 <div class="formal-card">
                     <h2 class="section-title">OUR MISSION</h2>
-                    <p class="mission-text">The Prefects' Guild of Dharmapala Vidyalaya Pannipitiya is the pinnacle of student leadership. Our mission is to maintain the highest standards of discipline while fostering a culture of integrity, service, and excellence. We act as the vital link between the school administration and the student body.</p>
-                    
+                    <p class="mission-text">The Prefects' Guild of Dharmapala Vidyalaya Pannipitiya is the pinnacle of
+                        student leadership. Our mission is to maintain the highest standards of discipline while
+                        fostering a culture of integrity, service, and excellence. We act as the vital link between the
+                        school administration and the student body.</p>
+
                     <div class="stats-row">
                         <div class="stat-box">
                             <span class="stat-num">18</span>
@@ -73,42 +97,136 @@
                 <div class="top-board-grid">
                     <div class="leader-profile" data-aos="zoom-in">
                         <div class="image-container">
-                            <img src="Assets/W.Maleesha Pramod.jpg" alt="Head Prefect">
+                            <img src="Assets/W.Maleesha Pramod.jpg" alt="Head Prefect W. Maleesha Pramod" loading="lazy">
                         </div>
                         <h3>W. Maleesha Pramod</h3>
                         <p class="post">Head Prefect</p>
                     </div>
                     <div class="leader-profile" data-aos="zoom-in" data-aos-delay="100">
                         <div class="image-container">
-                            <img src="Assets/R.A.Thenuki Malshika.jpg" alt="Head Prefect">
+                            <img src="Assets/R.A.Thenuki Malshika.jpg" alt="Head Prefect R.A. Thenuki Malshika" loading="lazy">
                         </div>
                         <h3>R.A. Thenuki Malshika</h3>
                         <p class="post">Head Prefect</p>
                     </div>
                     <div class="leader-profile" data-aos="zoom-in" data-aos-delay="200">
                         <div class="image-container">
-                            <img src="Assets/_MG_1289.jpg" alt="Senior Deputy Head Prefect">
+                            <img src="Assets/_MG_1289.jpg" alt="Senior Deputy Head Prefect Ridmi Navodya" loading="lazy">
                         </div>
                         <h3>Ridmi Navodya</h3>
                         <p class="post">Senior Deputy Head Prefect</p>
                     </div>
                 </div>
             </div>
+        </section>
+
+        <section id="events" class="events-section" data-aos="fade-up">
+            <div class="container">
+                <h2 class="section-title centered">Events & Activities</h2>
+                <div class="events-grid">
+                    <article class="event-card" data-aos="fade-right">
+                        <span class="event-badge">Upcoming</span>
+                        <h3>Leadership Training Camp</h3>
+                        <p>A one-day camp focused on team leadership and communication drills.</p>
+                        <p class="event-meta"><strong>Date:</strong> May 20, 2026</p>
+                    </article>
+                    <article class="event-card" data-aos="fade-up">
+                        <span class="event-badge">Preview</span>
+                        <h3>Community Service Drive</h3>
+                        <p>Volunteering with local partners to support school cleanliness and civic responsibility.</p>
+                        <p class="event-meta"><strong>Location:</strong> Dharmapala Vidyalaya Campus</p>
+                    </article>
+                    <article class="event-card" data-aos="fade-left">
+                        <span class="event-badge">Activities</span>
+                        <h3>Prefect Roundtable</h3>
+                        <p>Weekly sessions where prefects discuss campus welfare and discipline plans.</p>
+                        <p class="event-meta"><strong>Frequency:</strong> Weekly</p>
+                    </article>
+                </div>
+                <div class="events-cta">
+                    <a href="events.html" class="btn-traditional">Explore Full Events Page</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section" data-aos="fade-up">
+            <div class="container">
+                <h2 class="section-title centered">Contact Us</h2>
+                <div class="contact-info-panel centered">
+                    <div class="info-header">
+                        <h3>Reach Out to the Guild</h3>
+                        <p>We are here to answer your questions and hear your feedback regarding student welfare and leadership.</p>
+                    </div>
+
+                    <div class="info-list">
+                        <div class="info-item">
+                            <div class="icon-box">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <div class="info-text">
+                                <p class="label">Email Address</p>
+                                <a href="mailto:prefectsguild@dharmapalavidyalaya.lk">prefectsguild@dharmapalavidyalaya.lk</a>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="icon-box">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                            <div class="info-text">
+                                <p class="label">Location</p>
+                                <span>Dharmapala Vidyalaya, Pannipitiya, Sri Lanka</span>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="icon-box">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div class="info-text">
+                                <p class="label">Office Hours</p>
+                                <span>Monday - Friday, 7:30 AM - 2:30 PM</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-panel">
+                        <h4>Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="#" aria-label="Facebook">FB</a>
+                            <a href="#" aria-label="Instagram">IG</a>
+                            <a href="#" aria-label="YouTube">YT</a>
+                            <a href="#" aria-label="TikTok">TK</a>
+                        </div>
+                    </div>
+
+                    <div class="guild-seal">
+                        <img src="assets/pglogo.png" alt="Guild Seal" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer id="contact" class="academic-footer">
+    <footer class="academic-footer">
         <div class="container footer-grid">
             <div class="footer-info">
                 <h3>CONTACT US</h3>
-                <p>📍 Dharmapala Vidyalaya, Pannipitiya</p>
-                <p>📞 +94 11 2XXX XXX</p>
-                <p>📧 email@dharmapalapg.lk</p>
+                <p>📍 Dharmapala Vidyalaya, Pannipitiya, Sri Lanka</p>
+                <p>📧 prefectsguild@dharmapalavidyalaya.lk</p>
             </div>
             <div class="footer-links">
                 <h3>QUICK LINKS</h3>
                 <a href="https://www.dharmapalavidyalaya.org/">School Website</a>
-                <a href="https://www.facebook.com/dharmapalapg">Facebook</a>
-                <a href="https://www.instagram.com/dharmapalapg/">Instagram</a>
+                <a href="events.html">Events & Activities</a>
+                <a href="past-committees.html">Past Committees</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -119,6 +237,33 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true });
+
+        // Mobile menu functionality
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenuToggle.classList.toggle('active');
+            mobileMenuOverlay.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-overlay .nav-links a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuToggle.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        mobileMenuOverlay.addEventListener('click', (e) => {
+            if (e.target === mobileMenuOverlay) {
+                mobileMenuToggle.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+            }
+        });
     </script>
 </body>
+
 </html>
