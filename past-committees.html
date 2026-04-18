@@ -4,811 +4,569 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Past Executive Committees | Prefects' Guild</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lora:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Past Executive Committees | Prefects' Guild - Dharmapala Vidyalaya</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        maroon: '#7B003F',
+                        purple: '#69207E',
+                        gold: '#FFD200',
+                        'text-dark': '#2d2d2d',
+                        'glass-effect': 'rgba(255, 255, 255, 0.7)',
+                    },
+                    animation: {
+                        'light-sweep': 'light-sweep 3.5s ease-in-out infinite',
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                    },
+                    keyframes: {
+                        'light-sweep': {
+                            '0%': { transform: 'translateX(-100%) rotate(25deg)', opacity: '0' },
+                            '40%': { opacity: '0.8' },
+                            '60%': { transform: 'translateX(120%) rotate(25deg)', opacity: '0.8' },
+                            '100%': { transform: 'translateX(260%) rotate(25deg)', opacity: '0' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(50px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style new.css">
 </head>
 
-<body>
-    <div class="top-accent-bar"></div>
+<body class="bg-white text-text-dark overflow-x-hidden leading-relaxed selection:bg-maroon selection:text-gold">
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo-area">
-                <img src="Assets/pglogo.png" alt="School Logo" class="nav-logo" data-aos="fade-down">
+    <nav class="fixed top-0 w-full py-3 sm:py-4 bg-white bg-opacity-95 backdrop-blur-md z-40 border-b-2 border-maroon">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-5">
+            <div class="brand relative overflow-hidden flex items-center font-bold text-maroon tracking-wider">
+                <img src="assets/pglogo.png" alt="PG Logo" class="h-12 sm:h-16 w-auto mr-2 sm:mr-4">
+                <span class="text-sm sm:text-base lg:text-lg">PREFECTS' GUILD</span>
             </div>
-            <button class="mobile-menu-toggle" aria-label="Open Menu">
-                <span></span>
-                <span></span>
-                <span></span>
+            
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex list-none gap-4 lg:gap-6">
+                <li><a href="index.html"
+                        class="text-text-dark font-semibold text-xs lg:text-sm hover:text-maroon transition duration-300">Home</a>
+                </li>
+                <li><a href="index.html#about"
+                        class="text-text-dark font-semibold text-xs lg:text-sm hover:text-maroon transition duration-300">About</a>
+                </li>
+                <li><a href="index.html#mission"
+                        class="text-text-dark font-semibold text-xs lg:text-sm hover:text-maroon transition duration-300">Mission</a>
+                </li>
+                <li><a href="projects.html"
+                        class="text-text-dark font-semibold text-xs lg:text-sm hover:text-maroon transition duration-300">Projects</a>
+                </li>
+                <li><a href="past-committees.html"
+                        class="text-text-dark font-semibold text-xs lg:text-sm hover:text-maroon transition duration-300">Leadership</a>
+                </li>
+                <li><a href="index.html#contact"
+                        class="text-text-dark font-semibold text-xs lg:text-sm hover:text-maroon transition duration-300">Contact</a>
+                </li>
+            </ul>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="menuToggle" class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-100 transition duration-300">
+                <svg class="w-6 h-6 text-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
             </button>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">Our Mission</a></li>
-                <li><a href="index.html#leadership">Leadership</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="past-committees.html">Past Committees</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t-2 border-maroon max-h-0 overflow-hidden transition-all duration-300">
+            <ul class="flex flex-col list-none py-3 px-4 space-y-2">
+                <li><a href="index.html"
+                        class="block px-4 py-2 text-text-dark font-semibold text-sm hover:bg-maroon hover:text-white rounded-lg transition duration-300">Home</a>
+                </li>
+                <li><a href="index.html#about"
+                        class="block px-4 py-2 text-text-dark font-semibold text-sm hover:bg-maroon hover:text-white rounded-lg transition duration-300">About</a>
+                </li>
+                <li><a href="index.html#mission"
+                        class="block px-4 py-2 text-text-dark font-semibold text-sm hover:bg-maroon hover:text-white rounded-lg transition duration-300">Mission</a>
+                </li>
+                <li><a href="projects.html"
+                        class="block px-4 py-2 text-text-dark font-semibold text-sm hover:bg-maroon hover:text-white rounded-lg transition duration-300">Projects</a>
+                </li>
+                <li><a href="past-committees.html"
+                        class="block px-4 py-2 text-text-dark font-semibold text-sm hover:bg-maroon hover:text-white rounded-lg transition duration-300">Leadership</a>
+                </li>
+                <li><a href="index.html#contact"
+                        class="block px-4 py-2 text-text-dark font-semibold text-sm hover:bg-maroon hover:text-white rounded-lg transition duration-300">Contact</a>
+                </li>
             </ul>
         </div>
     </nav>
 
-    <div class="mobile-menu-overlay">
-        <div class="mobile-menu-content">
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">Our Mission</a></li>
-                <li><a href="index.html#leadership">Leadership</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="past-committees.html">Past Committees</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-        </div>
-    </div>
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuToggle.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+                setTimeout(() => {
+                    mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+                }, 0);
+            } else {
+                mobileMenu.style.maxHeight = '0';
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
+            }
+        });
 
-    <header class="hero">
-        <div class="hero-image"></div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content" data-aos="fade-up">
-            <h1 class="school-name">PAST EXECUTIVE COMMITTEES</h1>
-            <h2 class="guild-title">HEAD PREFECT TIMELINE</h2>
-            <div class="divider"></div>
-            <p class="tagline">A visual history of the Prefects' Guild head prefects and their years of service.</p>
-            <a href="index.html" class="btn-traditional">Back to Home</a>
+        // Close menu when a link is clicked
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.style.maxHeight = '0';
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
+            });
+        });
+    </script>
+
+    <header
+        class="relative text-white py-16 sm:py-24 lg:py-40 overflow-hidden h-screen flex items-center justify-center mt-20 bg-cover bg-center bg-no-repeat"
+        style="background-image: linear-gradient(rgba(123, 0, 63, 0.75), rgba(123, 0, 63, 0.75)), url('assets/_MG_1246-1.jpg');">
+        <div class="absolute inset-0 opacity-30 bg-gradient-to-b from-transparent via-maroon to-maroon"></div>
+        <div class="relative max-w-4xl mx-auto px-3 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+            <div class="mb-4 sm:mb-6 inline-block">
+                <div class="h-1 w-12 sm:w-16 bg-gold rounded-full mx-auto mb-4 sm:mb-6"></div>
+            </div>
+            <h1
+                class="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-bold tracking-wider mb-3 sm:mb-6 text-gold drop-shadow-lg font-serif leading-tight">
+                OUR LEADERSHIP JOURNEY
+            </h1>
+            <div class="h-1 w-12 sm:w-16 bg-gold mx-auto my-4 sm:my-8 rounded-full"></div>
+            <p class="text-sm sm:text-base md:text-lg text-white max-w-3xl mx-auto font-light leading-relaxed mb-4 sm:mb-8 px-2">
+                A legacy of excellence spanning four decades. Honoring the visionary leaders who shaped Dharmapala
+                Vidyalaya's Prefects' Guild.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-2 sm:gap-3 mt-6 sm:mt-10 px-2">
+                <span class="px-3 sm:px-6 py-1.5 sm:py-2 border-2 border-gold text-gold rounded-full text-xs font-semibold">1984 - 2026</span>
+                <span class="px-3 sm:px-6 py-1.5 sm:py-2 bg-gold text-maroon rounded-full text-xs font-semibold">42 Years Leadership</span>
+            </div>
         </div>
     </header>
 
-    <main>
-        <section class="committees-section" data-aos="fade-up">
-            <div class="container">
-                <h2 class="section-title">1980s Executive Committees</h2>
-                <div class="committees-grid">
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="100">
-                        <h3>1980 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>F.G. Fernando</strong>
+    <main class="py-12 sm:py-20 lg:py-32 bg-gradient-to-b from-gray-50 to-white relative">
+        <!-- Timeline Container -->
+        <div class="max-w-5xl mx-auto px-3 sm:px-6 lg:px-8">
+
+            <!-- Journey Introduction -->
+            <div class="text-center mb-8 sm:mb-16" data-aos="fade-up">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-maroon mb-2 sm:mb-3 font-serif">Our Leadership Journey</h2>
+                <p class="text-xs sm:text-sm md:text-base text-gray-600 max-w-2xl mx-auto px-2 leading-relaxed">Explore the remarkable legacy of leaders who dedicated themselves to service and excellence across four decades.</p>
+                <div class="w-12 sm:w-16 h-1 bg-gold mx-auto mt-3 sm:mt-5 rounded-full"></div>
+            </div>
+
+            <!-- Main Timeline -->
+            <div class="relative">
+                <!-- Timeline Center Line (Desktop Only) -->
+                <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-maroon via-purple to-gold"></div>
+
+                <!-- 1980s Timeline Section -->
+                <div class="mb-8 sm:mb-16" data-aos="fade-up">
+                    <div class="relative">
+                        <div class="flex flex-col md:flex-row gap-4 sm:gap-6 mb-6 sm:mb-10">
+                            <!-- Timeline Dot -->
+                            <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 -top-8 w-6 h-6 bg-gradient-to-br from-maroon to-purple border-4 border-white rounded-full shadow-lg"></div>
+
+                            <!-- Header Section -->
+                            <div class="w-full md:w-1/2 md:pr-12 md:text-right" data-aos="fade-right">
+                                <div class="bg-gradient-to-r from-maroon to-purple rounded-lg sm:rounded-xl p-4 sm:p-8 text-white shadow-lg">
+                                    <div class="text-3xl sm:text-4xl md:text-5xl font-bold mb-1 sm:mb-2 font-serif">1980s</div>
+                                    <p class="text-sm sm:text-base opacity-90">The Foundation Era</p>
+                                    <p class="text-xs opacity-75 mt-1 sm:mt-2">6 Notable Leaders</p>
+                                </div>
                             </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>P.Q. Perera</strong>
+                            <div class="w-full md:w-1/2"></div>
+                        </div>
+
+                        <!-- Timeline Cards Grid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
+                            <script>
+                                const data1980s = [
+                                    { year: '1984', boy: 'A.Karunathilaka', girl: 'A.N Gunasekara' },
+                                    { year: '1985', boy: 'S.Walpita', girl: 'S.Lasanthi' },
+                                    { year: '1986', boy: 'H.Wijenayaka', girl: 'Liyanage Fernando' },
+                                    { year: '1987', boy: 'B.S Wijenayaka', girl: 'H.E Fernando' },
+                                    { year: '1988', boy: 'M.Thilakawardana', girl: 'A.Rathnayaka' },
+                                    { year: '1989', boy: 'J.Dharmarathna', girl: 'L.Wijayathilaka' }
+                                ];
+                                data1980s.forEach((item, index) => {
+                                    const isEven = index % 2 === 0;
+                                    document.write(`
+                                        <div class="md:col-span-1 ${isEven ? 'md:order-1' : 'md:order-2'}" data-aos="fade-up" data-aos-delay="${index * 50}">
+                                            <div class="group relative bg-white rounded-lg sm:rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-l-4 border-maroon h-full">
+                                                <div class="absolute top-0 right-0 w-16 sm:w-20 h-16 sm:h-20 bg-maroon opacity-5 rounded-full -mr-4 sm:-mr-8 -mt-4 sm:-mt-8 group-hover:scale-150 transition-transform duration-300"></div>
+                                                <div class="relative z-10 p-4 sm:p-6">
+                                                    <div class="inline-block px-3 py-1 sm:px-4 sm:py-2 bg-maroon text-gold rounded-full text-xs sm:text-sm font-bold mb-3 sm:mb-4">${item.year}</div>
+                                                    <div class="space-y-3 sm:space-y-4">
+                                                        <div class="border-b-2 border-maroon border-opacity-20 pb-2 sm:pb-3">
+                                                            <p class="text-xs text-maroon font-bold uppercase tracking-widest mb-1 sm:mb-2">🎖️ Head (Boy)</p>
+                                                            <p class="text-gray-800 font-semibold text-sm sm:text-base">${item.boy}</p>
+                                                        </div>
+                                                        <div>
+                                                            <p class="text-xs text-maroon font-bold uppercase tracking-widest mb-1 sm:mb-2">👑 Head (Girl)</p>
+                                                            <p class="text-gray-800 font-semibold text-sm sm:text-base">${item.girl}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    `);
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1990s Timeline Section -->
+                <div class="mb-8 sm:mb-16" data-aos="fade-up">
+                    <div class="relative">
+                        <div class="flex flex-col md:flex-row gap-4 sm:gap-6 mb-6 sm:mb-10">
+                            <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 -top-8 w-6 h-6 bg-gradient-to-br from-purple to-gold border-4 border-white rounded-full shadow-lg"></div>
+                            <div class="w-full md:w-1/2"></div>
+                            <div class="w-full md:w-1/2 md:pl-12" data-aos="fade-left">
+                                <div class="bg-gradient-to-r from-purple to-maroon rounded-lg sm:rounded-xl p-4 sm:p-8 text-white shadow-lg">
+                                    <div class="text-3xl sm:text-4xl md:text-5xl font-bold mb-1 sm:mb-2 font-serif">1990s</div>
+                                    <p class="text-sm sm:text-base opacity-90">The Growth Era</p>
+                                    <p class="text-xs opacity-75 mt-1 sm:mt-2">10 Remarkable Leaders</p>
+                                </div>
                             </div>
                         </div>
-                        <p class="committee-meta">Session 1979 - 1980</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="150">
-                        <h3>1981 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>E.F. Perera</strong>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
+                            <script>
+                                const data1990s = [
+                                    { year: '1990', boy: 'M.T. Gamage', girl: 'P.P Liyanage' },
+                                    { year: '1991', boy: 'J.S Jayawikrama', girl: 'A.H Gunawardana' },
+                                    { year: '1992', boy: 'N.P Baddage', girl: 'K.K.V Gayani' },
+                                    { year: '1993', boy: 'P.R.C Jayasanka', girl: 'B.A Yaruni' },
+                                    { year: '1994', boy: 'R.C Jayasanka', girl: 'Y.Y Bolgoda' },
+                                    { year: '1995', boy: 'D.S Fernando', girl: 'Janitha Awanthi' },
+                                    { year: '1996', boy: 'W.D Samantha', girl: 'P.N Gamalath' },
+                                    { year: '1997', boy: 'S.Madhawasingha', girl: 'N.Manori' },
+                                    { year: '1998', boy: 'A.Chaminda', girl: 'S.Wijekoon' },
+                                    { year: '1999', boy: 'V.Maddumage', girl: 'P.Kooragama' }
+                                ];
+                                data1990s.forEach((item, index) => {
+                                    const isEven = index % 2 === 0;
+                                    document.write(`
+                                        <div class="md:col-span-1 ${isEven ? 'md:order-2' : 'md:order-1'}" data-aos="fade-up" data-aos-delay="${(index % 4) * 50}">
+                                            <div class="group relative bg-white rounded-lg sm:rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-l-4 border-purple h-full">
+                                                <div class="absolute top-0 right-0 w-16 sm:w-20 h-16 sm:h-20 bg-purple opacity-5 rounded-full -mr-4 sm:-mr-8 -mt-4 sm:-mt-8 group-hover:scale-150 transition-transform duration-300"></div>
+                                                <div class="relative z-10 p-4 sm:p-6">
+                                                    <div class="inline-block px-3 py-1 sm:px-4 sm:py-2 bg-purple text-gold rounded-full text-xs sm:text-sm font-bold mb-3 sm:mb-4">${item.year}</div>
+                                                    <div class="space-y-3 sm:space-y-4">
+                                                        <div class="border-b-2 border-purple border-opacity-20 pb-2 sm:pb-3">
+                                                            <p class="text-xs text-purple font-bold uppercase tracking-widest mb-1 sm:mb-2">🎖️ Head (Boy)</p>
+                                                            <p class="text-gray-800 font-semibold text-sm sm:text-base">${item.boy}</p>
+                                                        </div>
+                                                        <div>
+                                                            <p class="text-xs text-purple font-bold uppercase tracking-widest mb-1 sm:mb-2">👑 Head (Girl)</p>
+                                                            <p class="text-gray-800 font-semibold text-sm sm:text-base">${item.girl}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    `);
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2000s Timeline Section -->
+                <div class="mb-8 sm:mb-16" data-aos="fade-up">
+                    <div class="relative">
+                        <div class="flex flex-col md:flex-row gap-4 sm:gap-6 mb-6 sm:mb-10">
+                            <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 -top-8 w-6 h-6 bg-gradient-to-br from-maroon to-purple border-4 border-white rounded-full shadow-lg"></div>
+                            <div class="w-full md:w-1/2 md:pr-12 md:text-right" data-aos="fade-right">
+                                <div class="bg-gradient-to-r from-maroon to-purple rounded-lg sm:rounded-xl p-4 sm:p-8 text-white shadow-lg">
+                                    <div class="text-3xl sm:text-4xl md:text-5xl font-bold mb-1 sm:mb-2 font-serif">2000s</div>
+                                    <p class="text-sm sm:text-base opacity-90">The Development Era</p>
+                                    <p class="text-xs opacity-75 mt-1 sm:mt-2">10 Pioneering Leaders</p>
+                                </div>
                             </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>O.P. Silva</strong>
+                            <div class="w-full md:w-1/2"></div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
+                            <script>
+                                const data2000s = [
+                                    { year: '2000', boy: 'T.Anuruddha', girl: 'M.Rajakaruna' },
+                                    { year: '2001/02', boy: 'Charith Liyanage', girl: 'Piyasi Liyanage' },
+                                    { year: '2002/03', boy: 'Gayathra Kavinda', girl: 'Meenu Binduhewa' },
+                                    { year: '2003/04', boy: 'Malindu Samaraweera', girl: 'Iduni Wathsala' },
+                                    { year: '2004/05', boy: 'Gihan Sameera', girl: 'Thushari Indika' },
+                                    { year: '2005/06', boy: 'Asela Morawaka', girl: 'Udara Liyanage' },
+                                    { year: '2006/07', boy: 'Venura Kasunsiri', girl: 'Yashodha Sooriyaarachchi' },
+                                    { year: '2007/08', boy: 'Dulan Sameera', girl: 'Kaushalya Malavirathne' },
+                                    { year: '2008/09', boy: 'Srinuwan Kodikara', girl: 'Yashodha Muthukumari' },
+                                    { year: '2009/10', boy: 'C. Wickramasinghe', girl: 'Sasikala Sewwandi' }
+                                ];
+                                data2000s.forEach((item, index) => {
+                                    const isEven = index % 2 === 0;
+                                    document.write(`
+                                        <div class="md:col-span-1 ${isEven ? 'md:order-1' : 'md:order-2'}" data-aos="fade-up" data-aos-delay="${(index % 4) * 50}">
+                                            <div class="group relative bg-white rounded-lg sm:rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-l-4 border-maroon h-full">
+                                                <div class="absolute top-0 right-0 w-16 sm:w-20 h-16 sm:h-20 bg-maroon opacity-5 rounded-full -mr-4 sm:-mr-8 -mt-4 sm:-mt-8 group-hover:scale-150 transition-transform duration-300"></div>
+                                                <div class="relative z-10 p-4 sm:p-6">
+                                                    <div class="inline-block px-3 py-1 sm:px-4 sm:py-2 bg-maroon text-gold rounded-full text-xs sm:text-sm font-bold mb-3 sm:mb-4">${item.year}</div>
+                                                    <div class="space-y-3 sm:space-y-4">
+                                                        <div class="border-b-2 border-maroon border-opacity-20 pb-2 sm:pb-3">
+                                                            <p class="text-xs text-maroon font-bold uppercase tracking-widest mb-1 sm:mb-2">🎖️ Head (Boy)</p>
+                                                            <p class="text-gray-800 font-semibold text-sm sm:text-base">${item.boy}</p>
+                                                        </div>
+                                                        <div>
+                                                            <p class="text-xs text-maroon font-bold uppercase tracking-widest mb-1 sm:mb-2">👑 Head (Girl)</p>
+                                                            <p class="text-gray-800 font-semibold text-sm sm:text-base">${item.girl}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    `);
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2010s Timeline Section -->
+                <div class="mb-8 sm:mb-16" data-aos="fade-up">
+                    <div class="relative">
+                        <div class="flex flex-col md:flex-row gap-4 sm:gap-6 mb-6 sm:mb-10">
+                            <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 -top-8 w-6 h-6 bg-gradient-to-br from-purple to-gold border-4 border-white rounded-full shadow-lg"></div>
+                            <div class="w-full md:w-1/2"></div>
+                            <div class="w-full md:w-1/2 md:pl-12" data-aos="fade-left">
+                                <div class="bg-gradient-to-r from-purple to-maroon rounded-lg sm:rounded-xl p-4 sm:p-8 text-white shadow-lg">
+                                    <div class="text-3xl sm:text-4xl md:text-5xl font-bold mb-1 sm:mb-2 font-serif">2010s</div>
+                                    <p class="text-sm sm:text-base opacity-90">The Innovation Era</p>
+                                    <p class="text-xs opacity-75 mt-1 sm:mt-2">9 Visionary Leaders</p>
+                                </div>
                             </div>
                         </div>
-                        <p class="committee-meta">Session 1980 - 1981</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="200">
-                        <h3>1982 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>D.E. Silva</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>N.O. Fernando</strong>
-                            </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
+                            <script>
+                                const data2010s = [
+                                    { year: '2010/11', boy: 'Amila Peiris', girl: 'Archana Bamunuarachchi' },
+                                    { year: '2011/12', boy: 'Chathuranga Peiris', girl: 'Sayani Gunasekara' },
+                                    { year: '2012/13', boy: 'Dinindu Gamlath', girl: 'Dilmi Perera' },
+                                    { year: '2013/14', boy: 'Lakmal Peiris', girl: 'Nirasha Bandara' },
+                                    { year: '2014/15', boy: 'D.P.Udayanga', girl: 'Tharindi Kumarage' },
+                                    { year: '2015/16', boy: 'Hirushan Gunasekara', girl: 'Binuri Divyanjali' },
+                                    { year: '2017/18', boy: 'Heshara Kandanearachchi', girl: 'Nethmi Dulanji' },
+                                    { year: '2018/19', boy: 'Charith Dilshan', girl: 'Tharuka Weerasinghe' },
+                                    { year: '2019/20', boy: 'Yudithya Weerasekara', girl: 'Sachini Degambadage' }
+                                ];
+                                data2010s.forEach((item, index) => {
+                                    const isEven = index % 2 === 0;
+                                    document.write(`
+                                        <div class="md:col-span-1 ${isEven ? 'md:order-2' : 'md:order-1'}" data-aos="fade-up" data-aos-delay="${(index % 4) * 50}">
+                                            <div class="group relative bg-white rounded-lg sm:rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-l-4 border-purple h-full">
+                                                <div class="absolute top-0 right-0 w-16 sm:w-20 h-16 sm:h-20 bg-purple opacity-5 rounded-full -mr-4 sm:-mr-8 -mt-4 sm:-mt-8 group-hover:scale-150 transition-transform duration-300"></div>
+                                                <div class="relative z-10 p-4 sm:p-6">
+                                                    <div class="inline-block px-3 py-1 sm:px-4 sm:py-2 bg-purple text-gold rounded-full text-xs sm:text-sm font-bold mb-3 sm:mb-4">${item.year}</div>
+                                                    <div class="space-y-3 sm:space-y-4">
+                                                        <div class="border-b-2 border-purple border-opacity-20 pb-2 sm:pb-3">
+                                                            <p class="text-xs text-purple font-bold uppercase tracking-widest mb-1 sm:mb-2">🎖️ Head (Boy)</p>
+                                                            <p class="text-gray-800 font-semibold text-sm sm:text-base">${item.boy}</p>
+                                                        </div>
+                                                        <div>
+                                                            <p class="text-xs text-purple font-bold uppercase tracking-widest mb-1 sm:mb-2">👑 Head (Girl)</p>
+                                                            <p class="text-gray-800 font-semibold text-sm sm:text-base">${item.girl}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    `);
+                                });
+                            </script>
                         </div>
-                        <p class="committee-meta">Session 1981 - 1982</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="250">
-                        <h3>1983 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>C.D. Fernando</strong>
+                    </div>
+                </div>
+
+                <!-- 2020s Timeline Section -->
+                <div class="mb-2 sm:mb-6" data-aos="fade-up">
+                    <div class="relative">
+                        <div class="flex flex-col md:flex-row gap-4 sm:gap-6 mb-6 sm:mb-10">
+                            <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 -top-8 w-6 h-6 bg-gradient-to-br from-maroon to-gold border-4 border-white rounded-full shadow-lg"></div>
+                            <div class="w-full md:w-1/2 md:pr-12 md:text-right" data-aos="fade-right">
+                                <div class="bg-gradient-to-r from-maroon via-purple to-gold rounded-lg sm:rounded-xl p-4 sm:p-8 text-white shadow-lg relative overflow-hidden">
+                                    <div class="absolute top-0 right-0 -mr-12 -mt-12 w-32 h-32 bg-white opacity-5 rounded-full"></div>
+                                    <div class="relative z-10">
+                                        <div class="text-3xl sm:text-4xl md:text-5xl font-bold mb-1 sm:mb-2 font-serif">2020s</div>
+                                        <p class="text-sm sm:text-base opacity-90">The Modern Era</p>
+                                        <p class="text-xs opacity-75 mt-1 sm:mt-2">4 Contemporary Leaders</p>
+                                        <div class="mt-2 sm:mt-3 inline-block px-2 sm:px-3 py-0.5 sm:py-1 bg-gold bg-opacity-30 border border-gold rounded-full text-xs font-bold">🌟 Current & Future</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>M.N. Perera</strong>
-                            </div>
+                            <div class="w-full md:w-1/2"></div>
                         </div>
-                        <p class="committee-meta">Session 1982 - 1983</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="300">
-                        <h3>1984 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>B.C. Perera</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>L.M. Silva</strong>
-                            </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
+                            <script>
+                                const data2020s = [
+                                    { year: '2020/21', boy: 'Pasindu Supasan', girl: 'Vismi Tharupathini' },
+                                    { year: '2021/22', boy: 'Dineth Weliwaththa', girl: 'Vinumi Amavindi' },
+                                    { year: '2022/23', boy: 'Hasindu Induwara', girl: 'Mekala Weerasinghe' },
+                                    { year: '2023/24', boy: 'Dihindu Herath', girl: 'Dananja Mayadunna' },
+                                    { year: '2024/25', boy: 'Maleesha Pamod', girl: 'R.A.Thenuki Malshika', current: true }
+                                ];
+                                data2020s.forEach((item, index) => {
+                                    const isEven = index % 2 === 0;
+                                    document.write(`
+                                        <div class="md:col-span-1 ${isEven ? 'md:order-1' : 'md:order-2'}" data-aos="fade-up" data-aos-delay="${(index % 4) * 50}">
+                                            <div class="group relative bg-white rounded-lg sm:rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-l-4 border-maroon h-full ${item.current ? 'ring-2 ring-gold ring-offset-2' : ''}">
+                                                <div class="absolute top-0 right-0 w-16 sm:w-20 h-16 sm:h-20 bg-maroon opacity-5 rounded-full -mr-4 sm:-mr-8 -mt-4 sm:-mt-8 group-hover:scale-150 transition-transform duration-300"></div>
+                                                ${item.current ? '<div class="absolute top-2 right-2 bg-gradient-to-r from-gold to-yellow-300 text-maroon px-2 sm:px-3 py-1 rounded-full text-xs font-bold">🌟 CURRENT</div>' : ''}
+                                                <div class="relative z-10 p-4 sm:p-6">
+                                                    <div class="inline-block px-3 py-1 sm:px-4 sm:py-2 bg-maroon text-gold rounded-full text-xs sm:text-sm font-bold mb-3 sm:mb-4">${item.year}</div>
+                                                    <div class="space-y-3 sm:space-y-4">
+                                                        <div class="border-b-2 border-maroon border-opacity-20 pb-2 sm:pb-3">
+                                                            <p class="text-xs text-maroon font-bold uppercase tracking-widest mb-1 sm:mb-2">🎖️ Head (Boy)</p>
+                                                            <p class="text-gray-800 font-semibold text-sm sm:text-base">${item.boy}</p>
+                                                        </div>
+                                                        <div>
+                                                            <p class="text-xs text-maroon font-bold uppercase tracking-widest mb-1 sm:mb-2">👑 Head (Girl)</p>
+                                                            <p class="text-gray-800 font-semibold text-sm sm:text-base">${item.girl}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    `);
+                                });
+                            </script>
                         </div>
-                        <p class="committee-meta">Session 1983 - 1984</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="350">
-                        <h3>1985 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>A.B. Jayawardena</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>K.L. Fernando</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 1984 - 1985</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="100">
-                        <h3>1986 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>Z.A. Silva</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>J.K. Perera</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 1985 - 1986</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="150">
-                        <h3>1987 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>Y.Z. Perera</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>I.J. Fernando</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 1986 - 1987</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="200">
-                        <h3>1988 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>X.Y. Fernando</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>H.I. Silva</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 1987 - 1988</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="250">
-                        <h3>1989 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>W.X. Jayawardena</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>G.H. Perera</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 1988 - 1989</p>
-                    </article>
+                    </div>
                 </div>
             </div>
-        </section>
 
-        <section class="committees-section" data-aos="fade-up">
-            <div class="container">
-                <h2 class="section-title">1990s Executive Committees</h2>
-                <div class="committees-grid">
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="100">
-                        <h3>1990 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>V.W. Silva</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>F.G. Fernando</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 1989 - 1990</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="150">
-                        <h3>1991 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>U.V. Fernando</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>E.F. Perera</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 1990 - 1991</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="200">
-                        <h3>1992 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>T.U. Perera</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>D.E. Jayasinghe</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 1991 - 1992</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="250">
-                        <h3>1993 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>S.T. Fernando</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>C.D. Silva</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 1992 - 1993</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="300">
-                        <h3>1994 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>R.S. Jayawardena</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>B.C. Perera</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 1993 - 1994</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="350">
-                        <h3>1995 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>Q.R. Perera</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>A.B. Fernando</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 1994 - 1995</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="100">
-                        <h3>1996 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>P.W. Fernando</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>Z.T. Silva</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 1995 - 1996</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="150">
-                        <h3>1997 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>O.P. Perera</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>Y.S. Gunasekara</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 1996 - 1997</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="200">
-                        <h3>1998 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>N.V. Silva</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>W.R. Fernando</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 1997 - 1998</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="250">
-                        <h3>1999 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>M.T. Jayasinghe</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>V.P. Perera</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 1998 - 1999</p>
-                    </article>
+            <!-- Journey Statistics -->
+            <div class="mt-16 sm:mt-24 pt-8 sm:pt-12 border-t-4 border-maroon" data-aos="fade-up">
+                <h3 class="text-xl sm:text-2xl font-bold text-maroon text-center mb-6 sm:mb-10 font-serif">Impact By The Numbers</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-6">
+                    <div class="text-center p-3 sm:p-6 md:p-8 bg-gradient-to-br from-maroon to-purple rounded-lg sm:rounded-xl text-white shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+                        <div class="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2">42</div>
+                        <p class="text-xs sm:text-sm font-semibold">Years Served</p>
+                    </div>
+                    <div class="text-center p-3 sm:p-6 md:p-8 bg-gradient-to-br from-purple to-maroon rounded-lg sm:rounded-xl text-white shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+                        <div class="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2">84+</div>
+                        <p class="text-xs sm:text-sm font-semibold">Leaders</p>
+                    </div>
+                    <div class="text-center p-3 sm:p-6 md:p-8 bg-gradient-to-br from-gold to-maroon rounded-lg sm:rounded-xl text-white shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+                        <div class="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2">5</div>
+                        <p class="text-xs sm:text-sm font-semibold">Decades</p>
+                    </div>
+                    <div class="text-center p-3 sm:p-6 md:p-8 bg-gradient-to-br from-maroon to-gold rounded-lg sm:rounded-xl text-white shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+                        <div class="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2">∞</div>
+                        <p class="text-xs sm:text-sm font-semibold">Legacy</p>
+                    </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="committees-section" data-aos="fade-up">
-            <div class="container">
-                <h2 class="section-title">2000s Executive Committees</h2>
-                <div class="committees-grid">
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="100">
-                        <h3>2000 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>L.S. Chandrasekara</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>U.M. Fernando</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 1999 - 2000</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="150">
-                        <h3>2001 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>K.R. Perera</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>T.P. Silva</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 2000 - 2001</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="200">
-                        <h3>2002 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>J.K. Fernando</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>S.M. Weerawardena</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 2001 - 2002</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="250">
-                        <h3>2003 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>I.J. Perera</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>R.L. Silva</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 2002 - 2003</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="300">
-                        <h3>2004 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>H.T. Fernando</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>P.M. Wickramasinghe</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 2003 - 2004</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="350">
-                        <h3>2005 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>G.S. de Silva</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>N.A. Jayasinghe</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 2004 - 2005</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="100">
-                        <h3>2006 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>F.P. Perera</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>M.K. Rodrigo</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 2005 - 2006</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="150">
-                        <h3>2007 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>E.R. Silva</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>H.W. Fernando</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 2006 - 2007</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="200">
-                        <h3>2008 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>D.P. Jayawardena</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>A.J. Peiris</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 2007 - 2008</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="250">
-                        <h3>2009 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>C.J. Perera</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>N.L. Fernando</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 2008 - 2009</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="committees-section" data-aos="fade-up">
-            <div class="container">
-                <h2 class="section-title">2010s Executive Committees</h2>
-                <div class="committees-grid">
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="100">
-                        <h3>2010 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>B.R. Wickramasinghe</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>S.K. de Silva</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 2009 - 2010</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="150">
-                        <h3>2011 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>A.J. Fernando</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>P.S. Wijesinghe</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 2010 - 2011</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="200">
-                        <h3>2012 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>H.P. Perera</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>D.M. Karunatilaka</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 2011 - 2012</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="250">
-                        <h3>2013 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>L.C. Jayasinghe</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>K.N. Silva</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 2012 - 2013</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="300">
-                        <h3>2014 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>S.W. Wijeratne</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>N.M. Fernando</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 2013 - 2014</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="350">
-                        <h3>2015 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>R.K. Tennakoon</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>M.D. Perera</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 2014 - 2015</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="100">
-                        <h3>2016 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>D.L. Silva</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>A.P. Fernando</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 2015 - 2016</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="150">
-                        <h3>2017 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>T.S. Fernando</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>R.A. Perera</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 2016 - 2017</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="200">
-                        <h3>2018 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>N.J. Herath</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>S.V. De Alwis</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 2017 - 2018</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="250">
-                        <h3>2019 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>P.M. Karunaratne</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>H.S. Wijesinghe</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 2018 - 2019</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="committees-section" data-aos="fade-up">
-            <div class="container">
-                <h2 class="section-title">2020s Executive Committees</h2>
-                <div class="committees-grid">
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="100">
-                        <h3>2020 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>K.L. Amarasinghe</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>B.C. Rodrigo</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 2019 - 2020</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="150">
-                        <h3>2021 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>M.A. Gunasekara</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>Y.A. de Silva</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 2020 - 2021</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="200">
-                        <h3>2022 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>S.H. Jayawardena</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>P.D. Fernando</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 2021 - 2022</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="250">
-                        <h3>2023 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>R.T. Senanayake</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>L.K. Abeywardena</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 2022 - 2023</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="300">
-                        <h3>2024 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>J.M. Kularatne</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>N.S. Perera</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 2023 - 2024</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="350">
-                        <h3>2025 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>D.R. Jayasinghe</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>S.P. Weerasinghe</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 2024 - 2025</p>
-                    </article>
-                    <article class="committee-card" data-aos="fade-up" data-aos-delay="100">
-                        <h3>2026 Executive Committee</h3>
-                        <div class="committee-heads">
-                            <div class="head male">
-                                <span class="head-label">Male Head Prefect</span>
-                                <strong>H.K. Fernando</strong>
-                            </div>
-                            <div class="head female">
-                                <span class="head-label">Female Head Prefect</span>
-                                <strong>A.M. Perera</strong>
-                            </div>
-                        </div>
-                        <p class="committee-meta">Session 2025 - 2026</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="academic-footer">
-        <div class="container footer-grid">
-            <div class="footer-info">
-                <h3>CONTACT US</h3>
-                <p>📍 Ananda College, Colombo 10, Sri Lanka</p>
-                <p>📞 +94 11 2XXX XXX</p>
-                <p>📧 prefectsguildofanandacollege@gmail.com</p>
-            </div>
-            <div class="footer-links">
-                <h3>QUICK LINKS</h3>
-                <a href="https://www.dharmapalavidyalaya.org/">School Website</a>
-                <a href="https://www.facebook.com/dharmapalapg">Facebook</a>
-                <a href="https://www.instagram.com/dharmapalapg/">Instagram</a>
-                <a href="events.html">Events & Activities</a>
-                <a href="past-committees.html">Past Committees</a>
             </div>
         </div>
-        <div class="footer-bottom">
-            &copy; 2026 Prefects' Guild - Dharmapala Vidyalaya. All Rights Reserved.
+    </main>
+
+    <footer class="relative bg-white text-text-dark py-16 border-t-4 border-maroon">
+        <div class="relative z-10 max-w-7xl mx-auto px-5">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+                <!-- Brand Section -->
+                <div class="text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start mb-3">
+                        <img src="assets/pglogo.png" alt="Guild Logo" class="w-20 h-20">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-maroon">PREFECTS' GUILD</h3>
+                    <p class="text-sm text-gray-600">Honoring the legacy of our past leaders.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="text-center">
+                    <h4 class="font-semibold mb-4 text-lg text-maroon">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-text-dark">
+                        <li><a href="New home.html"
+                                class="hover:text-maroon transition duration-300 font-medium">Home</a></li>
+                        <li><a href="New home.html#about"
+                                class="hover:text-maroon transition duration-300 font-medium">About</a></li>
+                        <li><a href="projects.html"
+                                class="hover:text-maroon transition duration-300 font-medium">Projects</a></li>
+                        <li><a href="past-committees.html"
+                                class="hover:text-maroon transition duration-300 font-medium">Leadership</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="text-center md:text-right">
+                    <h4 class="font-semibold mb-4 text-lg text-maroon">Contact Us</h4>
+                    <p class="text-sm mb-2 text-text-dark">📧 email@dharmapala.lk</p>
+                    <p class="text-sm mb-4 text-text-dark">📍 High Level Rd, Pannipitiya</p>
+                    <div class="flex gap-3 justify-center md:justify-end">
+                        <a href="#"
+                            class="w-10 h-10 bg-maroon rounded-full flex items-center justify-center text-white hover:bg-gold hover:text-maroon hover:scale-110 transition duration-300"
+                            title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-maroon rounded-full flex items-center justify-center text-white hover:bg-gold hover:text-maroon hover:scale-110 transition duration-300"
+                            title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-maroon rounded-full flex items-center justify-center text-white hover:bg-gold hover:text-maroon hover:scale-110 transition duration-300"
+                            title="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="border-t border-maroon border-opacity-20 pt-8">
+                <p class="text-center text-sm text-gray-600">
+                    &copy; 2026 Dharmapala Vidyalaya Prefects' Guild. All rights reserved. | Designed by Bashana.
+                </p>
+            </div>
         </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 800, once: true });
-
-        // Mobile menu functionality
-        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-        const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
-
-        mobileMenuToggle.addEventListener('click', () => {
-            mobileMenuToggle.classList.toggle('active');
-            mobileMenuOverlay.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking on a link
-        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-overlay .nav-links a');
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenuToggle.classList.remove('active');
-                mobileMenuOverlay.classList.remove('active');
-            });
-        });
-
-        // Close mobile menu when clicking outside
-        mobileMenuOverlay.addEventListener('click', (e) => {
-            if (e.target === mobileMenuOverlay) {
-                mobileMenuToggle.classList.remove('active');
-                mobileMenuOverlay.classList.remove('active');
-            }
+        // Initialize Animations
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50
         });
     </script>
 </body>
