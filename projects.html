@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dharmapala Vidyalaya | Prefects' Guild - Projects</title>
+    <meta name="description"
+        content="Explore the impactful projects and initiatives led by the Dharmapala Vidyalaya Prefects' Guild.">
+    <link rel="icon" href="assets/pglogo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        maroon: '#7B003F',
+                        purple: '#69207E',
+                        gold: '#FFD200',
+                        'text-dark': '#2d2d2d',
+                        'glass-effect': 'rgba(255, 255, 255, 0.7)',
+                    },
+                    animation: {
+                        'light-sweep': 'light-sweep 3.5s ease-in-out infinite',
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                    },
+                    keyframes: {
+                        'light-sweep': {
+                            '0%': { transform: 'translateX(-100%) rotate(25deg)', opacity: '0' },
+                            '40%': { opacity: '0.8' },
+                            '60%': { transform: 'translateX(120%) rotate(25deg)', opacity: '0.8' },
+                            '100%': { transform: 'translateX(260%) rotate(25deg)', opacity: '0' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(50px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style new.css">
+</head>
+
+<body class="bg-white text-text-dark overflow-x-hidden leading-relaxed">
+
+    <div id="loader"
+        class="fixed inset-0 bg-white z-50 flex justify-center items-center transition-opacity duration-500">
+        <div class="text-center">
+            <img src="assets/pglogo.png" alt="Guild Logo" class="w-24 mx-auto animate-pulse">
+            <div class="text-lg font-semibold mt-4">PREPARING...</div>
+            <div class="w-40 h-1 bg-gray-200 mx-auto mt-5 rounded-full overflow-hidden">
+                <div class="h-full bg-maroon animate-pulse" style="width: 0%; animation: grow 1.5s forwards;"></div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="fixed top-0 w-full py-3 sm:py-4 bg-white bg-opacity-95 backdrop-blur-md z-40 border-b-2 border-maroon">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-5">
+            <div class="brand relative overflow-hidden flex items-center font-bold text-maroon tracking-wider">
+                <img src="assets/pglogo.png" alt="PG Logo" class="h-12 sm:h-16 w-auto mr-2 sm:mr-4">
+                <span class="text-sm sm:text-base lg:text-lg">PREFECTS' GUILD</span>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex list-none gap-4 lg:gap-6">
+                <li><a href="index.html"
+                        class="text-text-dark font-semibold text-xs lg:text-sm hover:text-maroon transition duration-300">Home</a>
+                </li>
+                <li><a href="index.html#about"
+                        class="text-text-dark font-semibold text-xs lg:text-sm hover:text-maroon transition duration-300">About</a>
+                </li>
+                <li><a href="index.html#mission"
+                        class="text-text-dark font-semibold text-xs lg:text-sm hover:text-maroon transition duration-300">Mission</a>
+                </li>
+                <li><a href="projects.html"
+                        class="text-text-dark font-semibold text-xs lg:text-sm hover:text-maroon transition duration-300">Projects</a>
+                </li>
+                <li><a href="past-committees.html"
+                        class="text-text-dark font-semibold text-xs lg:text-sm hover:text-maroon transition duration-300">Leadership</a>
+                </li>
+                <li><a href="index.html#contact"
+                        class="text-text-dark font-semibold text-xs lg:text-sm hover:text-maroon transition duration-300">Contact</a>
+                </li>
+            </ul>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="menuToggle" class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-100 transition duration-300">
+                <svg class="w-6 h-6 text-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t-2 border-maroon max-h-0 overflow-hidden transition-all duration-300">
+            <ul class="flex flex-col list-none py-3 px-4 space-y-2">
+                <li><a href="index.html"
+                        class="block px-4 py-2 text-text-dark font-semibold text-sm hover:bg-maroon hover:text-white rounded-lg transition duration-300">Home</a>
+                </li>
+                <li><a href="index.html#about"
+                        class="block px-4 py-2 text-text-dark font-semibold text-sm hover:bg-maroon hover:text-white rounded-lg transition duration-300">About</a>
+                </li>
+                <li><a href="index.html#mission"
+                        class="block px-4 py-2 text-text-dark font-semibold text-sm hover:bg-maroon hover:text-white rounded-lg transition duration-300">Mission</a>
+                </li>
+                <li><a href="projects.html"
+                        class="block px-4 py-2 text-text-dark font-semibold text-sm hover:bg-maroon hover:text-white rounded-lg transition duration-300">Projects</a>
+                </li>
+                <li><a href="past-committees.html"
+                        class="block px-4 py-2 text-text-dark font-semibold text-sm hover:bg-maroon hover:text-white rounded-lg transition duration-300">Leadership</a>
+                </li>
+                <li><a href="index.html#contact"
+                        class="block px-4 py-2 text-text-dark font-semibold text-sm hover:bg-maroon hover:text-white rounded-lg transition duration-300">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuToggle.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+                setTimeout(() => {
+                    mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+                }, 0);
+            } else {
+                mobileMenu.style.maxHeight = '0';
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
+            }
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.style.maxHeight = '0';
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
+            });
+        });
+    </script>
+
+    <header class="h-screen relative flex justify-center items-center text-center">
+        <div class="absolute inset-0 bg-cover bg-center opacity-30"
+            style="background-image: url('assets/239623594_1920590834790161_1604849225847124770_n.jpg');"></div>
+        <div class="relative z-10 animate-fade-in" data-aos="zoom-in" data-aos-duration="1200">
+            <h1 class="text-5xl md:text-6xl font-bold tracking-wider text-text-dark"><span
+                    class="text-maroon">OUR</span> PROJECTS</h1>
+            <p class="text-lg tracking-widest mt-3 font-light">INITIATIVES THAT MAKE A DIFFERENCE</p>
+            <div class="w-16 h-1 bg-gold mx-auto my-6"></div>
+            <p class="text-base max-w-2xl mx-auto">Discover the impactful projects led by our Prefects' Guild, fostering
+                community, leadership, and excellence.</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="projects" class="max-w-7xl mx-auto my-20 px-5">
+            <div class="space-y-16">
+                <!-- Annual Sports Meet -->
+                <div id="sports"
+                    class="bg-glass-effect backdrop-blur-xl border border-maroon border-opacity-10 rounded-2xl p-10 shadow-2xl"
+                    data-aos="fade-up">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                        <div>
+                            <h2 class="text-3xl font-bold text-maroon mb-5">Annual Sports Meet</h2>
+                            <p class="text-base leading-relaxed mb-4">
+                                Our flagship event brings together students from all grades in exciting inter-house
+                                competitions.
+                                From track and field to team sports, we promote physical health, sportsmanship, and
+                                school spirit.
+                            </p>
+                            <ul class="list-disc list-inside text-sm space-y-2 mb-6">
+                                <li>Inter-house athletics and team games</li>
+                                <li>Leadership roles in event organization</li>
+                                <li>Community participation and cheering</li>
+                                <li>Awards ceremony recognizing excellence</li>
+                            </ul>
+                            <div class="flex gap-4">
+                                <span class="bg-maroon text-white px-4 py-2 rounded-lg text-sm">🏆 Athletics</span>
+                                <span class="bg-purple text-white px-4 py-2 rounded-lg text-sm">🤝 Teamwork</span>
+                            </div>
+                        </div>
+                        <div class="relative">
+                            <img src="assets/project1.jpg" alt="Sports Meet"
+                                class="w-full h-64 object-cover rounded-xl shadow-lg">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-maroon to-transparent opacity-20 rounded-xl">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Community Clean-up -->
+                <div id="cleanup"
+                    class="bg-glass-effect backdrop-blur-xl border border-maroon border-opacity-10 rounded-2xl p-10 shadow-2xl"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                        <div class="order-2 lg:order-1">
+                            <h2 class="text-3xl font-bold text-maroon mb-5">Community Clean-up</h2>
+                            <p class="text-base leading-relaxed mb-4">
+                                Environmental stewardship is at our core. We organize regular clean-up drives in the
+                                school premises
+                                and surrounding areas, teaching students the importance of sustainability and community
+                                responsibility.
+                            </p>
+                            <ul class="list-disc list-inside text-sm space-y-2 mb-6">
+                                <li>Monthly school and neighborhood clean-ups</li>
+                                <li>Tree planting and garden maintenance</li>
+                                <li>Educational sessions on environmental care</li>
+                                <li>Partnerships with local environmental groups</li>
+                            </ul>
+                            <div class="flex gap-4">
+                                <span class="bg-maroon text-white px-4 py-2 rounded-lg text-sm">🌿 Environment</span>
+                                <span class="bg-purple text-white px-4 py-2 rounded-lg text-sm">🌍 Community</span>
+                            </div>
+                        </div>
+                        <div class="order-1 lg:order-2 relative">
+                            <img src="assets/project2.jpg" alt="Clean-up Drive"
+                                class="w-full h-64 object-cover rounded-xl shadow-lg">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-maroon to-transparent opacity-20 rounded-xl">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leadership Workshops -->
+                <div id="workshops"
+                    class="bg-glass-effect backdrop-blur-xl border border-maroon border-opacity-10 rounded-2xl p-10 shadow-2xl"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                        <div>
+                            <h2 class="text-3xl font-bold text-maroon mb-5">Leadership Workshops</h2>
+                            <p class="text-base leading-relaxed mb-4">
+                                Through interactive workshops, we equip students with essential leadership skills,
+                                communication techniques,
+                                and personal development strategies to become confident and responsible leaders.
+                            </p>
+                            <ul class="list-disc list-inside text-sm space-y-2 mb-6">
+                                <li>Public speaking and presentation skills</li>
+                                <li>Conflict resolution and team building</li>
+                                <li>Time management and goal setting</li>
+                                <li>Mentorship programs for junior students</li>
+                            </ul>
+                            <div class="flex gap-4">
+                                <span class="bg-maroon text-white px-4 py-2 rounded-lg text-sm">🎯 Leadership</span>
+                                <span class="bg-purple text-white px-4 py-2 rounded-lg text-sm">💪 Development</span>
+                            </div>
+                        </div>
+                        <div class="relative">
+                            <img src="assets/project3.jpg" alt="Leadership Workshop"
+                                class="w-full h-64 object-cover rounded-xl shadow-lg">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-maroon to-transparent opacity-20 rounded-xl">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Projects -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-glass-effect backdrop-blur-xl border border-maroon border-opacity-10 rounded-2xl p-8 shadow-2xl"
+                        data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="text-2xl font-bold text-maroon mb-4">Cultural Festivals</h3>
+                        <p class="text-sm leading-relaxed mb-4">
+                            Celebrating diversity through cultural events, traditional performances, and art exhibitions
+                            that showcase our rich heritage.
+                        </p>
+                        <div class="flex gap-2">
+                            <span class="bg-gold text-black px-3 py-1 rounded text-xs">🎨 Culture</span>
+                            <span class="bg-maroon text-white px-3 py-1 rounded text-xs">🎭 Arts</span>
+                        </div>
+                    </div>
+                    <div class="bg-glass-effect backdrop-blur-xl border border-maroon border-opacity-10 rounded-2xl p-8 shadow-2xl"
+                        data-aos="fade-up" data-aos-delay="400">
+                        <h3 class="text-2xl font-bold text-maroon mb-4">Student Mentorship</h3>
+                        <p class="text-sm leading-relaxed mb-4">
+                            Pairing senior students with juniors for academic and personal guidance, fostering a
+                            supportive learning environment.
+                        </p>
+                        <div class="flex gap-2">
+                            <span class="bg-gold text-black px-3 py-1 rounded text-xs">📚 Education</span>
+                            <span class="bg-maroon text-white px-3 py-1 rounded text-xs">🤝 Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="relative bg-white text-text-dark py-16 border-t-4 border-maroon">
+        <div class="relative z-10 max-w-7xl mx-auto px-5">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+                <!-- Brand Section -->
+                <div class="text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start mb-3">
+                        <img src="assets/pglogo.png" alt="Guild Logo" class="w-20 h-20">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-maroon">PREFECTS' GUILD</h3>
+                    <p class="text-sm text-gray-600">Leading with purpose, integrity, and community spirit.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="text-center">
+                    <h4 class="font-semibold mb-4 text-lg text-maroon">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-text-dark">
+                        <li><a href="New home.html#home"
+                                class="hover:text-maroon transition duration-300 font-medium">Home</a></li>
+                        <li><a href="New home.html#about"
+                                class="hover:text-maroon transition duration-300 font-medium">About</a></li>
+                        <li><a href="New home.html#leadership"
+                                class="hover:text-maroon transition duration-300 font-medium">Leadership</a></li>
+                        <li><a href="#projects"
+                                class="hover:text-maroon transition duration-300 font-medium">Projects</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="text-center md:text-right">
+                    <h4 class="font-semibold mb-4 text-lg text-maroon">Contact Us</h4>
+                    <p class="text-sm mb-2 text-text-dark">📧 email@dharmapala.lk</p>
+                    <p class="text-sm mb-4 text-text-dark">📍 High Level Rd, Pannipitiya</p>
+                    <div class="flex gap-3 justify-center md:justify-end">
+                        <a href="#"
+                            class="w-10 h-10 bg-maroon rounded-full flex items-center justify-center text-white hover:bg-gold hover:text-maroon hover:scale-110 transition duration-300"
+                            title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-maroon rounded-full flex items-center justify-center text-white hover:bg-gold hover:text-maroon hover:scale-110 transition duration-300"
+                            title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-maroon rounded-full flex items-center justify-center text-white hover:bg-gold hover:text-maroon hover:scale-110 transition duration-300"
+                            title="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="border-t border-maroon border-opacity-20 pt-8">
+                <p class="text-center text-sm text-gray-600">
+                    &copy; 2026 Dharmapala Vidyalaya Prefects' Guild. All rights reserved. | Designed by Bashana.
+                </p>
+                <p class="text-center text-xs text-gray-500 mt-2">
+                    <a href="New home.html" class="hover:text-maroon transition duration-300">Back to Home</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                setTimeout(() => loader.style.display = 'none', 500);
+            }, 1500);
+        });
+    </script>
+</body>
+
+</html>
