@@ -4,264 +4,492 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prefects' Guild | Dharmapala Vidyalaya</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lora:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;700&display=swap"
-        rel="stylesheet">
+    <title>Dharmapala Vidyalaya | Prefects' Guild</title>
+    <meta name="description"
+        content="Official landing page of the Dharmapala Vidyalaya Prefects' Guild. Leading student service, discipline, and school life for 2025/26.">
+    <link rel="icon" href="assets/pglogo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        maroon: '#7B003F',
+                        purple: '#69207E',
+                        gold: '#FFD200',
+                        'text-dark': '#2d2d2d',
+                        'glass-effect': 'rgba(255, 255, 255, 0.7)',
+                    },
+                    animation: {
+                        'light-sweep': 'light-sweep 3.5s ease-in-out infinite',
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                    },
+                    keyframes: {
+                        'light-sweep': {
+                            '0%': { transform: 'translateX(-100%) rotate(25deg)', opacity: '0' },
+                            '40%': { opacity: '0.8' },
+                            '60%': { transform: 'translateX(120%) rotate(25deg)', opacity: '0.8' },
+                            '100%': { transform: 'translateX(260%) rotate(25deg)', opacity: '0' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(50px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    },
+                },
+            },
+        }
+    </script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style new.css">
 </head>
 
-<body>
+<body class="bg-white text-text-dark overflow-x-hidden leading-relaxed">
 
-    <div class="top-accent-bar"></div>
-
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo-area">
-                <img src="Assets/pglogo.png" alt="School Logo" class="nav-logo" data-aos="fade-down">
-                <div class="logo-text"></div>
+    <div id="loader"
+        class="fixed inset-0 bg-white z-50 flex justify-center items-center transition-opacity duration-500">
+        <div class="text-center">
+            <img src="assets/pglogo.png" alt="Guild Logo" class="w-24 mx-auto animate-pulse">
+            <div class="text-lg font-semibold mt-4">PREPARING...</div>
+            <div class="w-40 h-1 bg-gray-200 mx-auto mt-5 rounded-full overflow-hidden">
+                <div class="h-full bg-maroon animate-pulse" style="width: 0%; animation: grow 1.5s forwards;"></div>
             </div>
-            <button class="mobile-menu-toggle" aria-label="Open Menu">
-                <span></span>
-                <span></span>
-                <span></span>
+        </div>
+    </div>
+
+    <nav class="fixed top-0 w-full py-3 sm:py-4 bg-white bg-opacity-95 backdrop-blur-md z-40 border-b-2 border-maroon">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-5">
+            <div class="brand relative overflow-hidden flex items-center font-bold text-maroon tracking-wider">
+                <img src="assets/pglogo.png" alt="PG Logo" class="h-12 sm:h-16 w-auto mr-2 sm:mr-4">
+                <span class="text-sm sm:text-base lg:text-lg">PREFECTS' GUILD</span>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex list-none gap-4 lg:gap-6">
+                <li><a href="index.html"
+                        class="text-text-dark font-semibold text-xs lg:text-sm hover:text-maroon transition duration-300">Home</a>
+                </li>
+                <li><a href="index.html#about"
+                        class="text-text-dark font-semibold text-xs lg:text-sm hover:text-maroon transition duration-300">About</a>
+                </li>
+                <li><a href="index.html#mission"
+                        class="text-text-dark font-semibold text-xs lg:text-sm hover:text-maroon transition duration-300">Mission</a>
+                </li>
+                <li><a href="projects.html"
+                        class="text-text-dark font-semibold text-xs lg:text-sm hover:text-maroon transition duration-300">Projects</a>
+                </li>
+                <li><a href="past-committees.html"
+                        class="text-text-dark font-semibold text-xs lg:text-sm hover:text-maroon transition duration-300">Leadership</a>
+                </li>
+                <li><a href="index.html#contact"
+                        class="text-text-dark font-semibold text-xs lg:text-sm hover:text-maroon transition duration-300">Contact</a>
+                </li>
+            </ul>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="menuToggle" class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-100 transition duration-300">
+                <svg class="w-6 h-6 text-maroon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
             </button>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Our Mission</a></li>
-                <li><a href="#leadership">Leadership</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="past-committees.html">Past Committees</a></li>
-                <li><a href="#contact">Contact</a></li>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t-2 border-maroon max-h-0 overflow-hidden transition-all duration-300">
+            <ul class="flex flex-col list-none py-3 px-4 space-y-2">
+                <li><a href="index.html"
+                        class="block px-4 py-2 text-text-dark font-semibold text-sm hover:bg-maroon hover:text-white rounded-lg transition duration-300">Home</a>
+                </li>
+                <li><a href="index.html#about"
+                        class="block px-4 py-2 text-text-dark font-semibold text-sm hover:bg-maroon hover:text-white rounded-lg transition duration-300">About</a>
+                </li>
+                <li><a href="index.html#mission"
+                        class="block px-4 py-2 text-text-dark font-semibold text-sm hover:bg-maroon hover:text-white rounded-lg transition duration-300">Mission</a>
+                </li>
+                <li><a href="projects.html"
+                        class="block px-4 py-2 text-text-dark font-semibold text-sm hover:bg-maroon hover:text-white rounded-lg transition duration-300">Projects</a>
+                </li>
+                <li><a href="past-committees.html"
+                        class="block px-4 py-2 text-text-dark font-semibold text-sm hover:bg-maroon hover:text-white rounded-lg transition duration-300">Leadership</a>
+                </li>
+                <li><a href="index.html#contact"
+                        class="block px-4 py-2 text-text-dark font-semibold text-sm hover:bg-maroon hover:text-white rounded-lg transition duration-300">Contact</a>
+                </li>
             </ul>
         </div>
     </nav>
 
-    <div class="mobile-menu-overlay">
-        <div class="mobile-menu-content">
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Our Mission</a></li>
-                <li><a href="#leadership">Leadership</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="past-committees.html">Past Committees</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </div>
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuToggle.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+                setTimeout(() => {
+                    mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+                }, 0);
+            } else {
+                mobileMenu.style.maxHeight = '0';
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
+            }
+        });
 
-    <header id="home" class="hero">
-        <div class="hero-image"></div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content" data-aos="fade-up">
-            <h1 class="school-name">DHAMMAPALA VIDYALAYA</h1>
-            <h2 class="guild-title">PREFECTS' GUILD</h2>
-            <div class="divider"></div>
-            <p class="tagline">Building Leaders | Inspiring Excellence | 2025/26</p>
-            <a href="#about" class="btn-traditional">LEARN MORE</a>
-        </div>
+        // Close menu when a link is clicked
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.style.maxHeight = '0';
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
+            });
+        });
+    </script>
+
+    <header id="home" class="h-screen relative flex justify-center items-center text-center">
+        <div class="absolute inset-0 bg-cover bg-center opacity-100"
+            style="background-image: url('assets/489823903_1213578223888047_640789535141621150_n.png');"></div>
     </header>
 
     <main>
-        <section id="about" class="academic-section" data-aos="fade-up">
-            <div class="container">
-                <div class="formal-card">
-                    <h2 class="section-title">OUR MISSION</h2>
-                    <p class="mission-text">The Prefects' Guild of Dharmapala Vidyalaya Pannipitiya is the pinnacle of
-                        student leadership. Our mission is to maintain the highest standards of discipline while
-                        fostering a culture of integrity, service, and excellence. We act as the vital link between the
-                        school administration and the student body.</p>
+        <section id="about" class="max-w-6xl mx-auto my-20 px-5">
+            <div class="bg-glass-effect backdrop-blur-xl border border-maroon border-opacity-10 rounded-2xl p-10 shadow-2xl animate-slide-up"
+                data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-maroon mb-5 uppercase">ABOUT THE GUILD</h2>
+                <p class="text-base leading-relaxed">
+                    The Prefects' Guild of Dharmapala Vidyalaya Pannipitiya is the voice of student leadership, service,
+                    and discipline.
+                    We support the school community by encouraging respectful conduct, organizing student initiatives,
+                    and promoting excellence across academics, sports, and civic life.
+                </p>
+            </div>
+        </section>
 
-                    <div class="stats-row">
-                        <div class="stat-box">
-                            <span class="stat-num">18</span>
-                            <span class="stat-label">Top Board Members</span>
-                        </div>
-                        <div class="stat-box">
-                            <span class="stat-num">500+</span>
-                            <span class="stat-label">Students Led</span>
-                        </div>
-                        <div class="stat-box">
-                            <span class="stat-num">100%</span>
-                            <span class="stat-label">Commitment</span>
-                        </div>
+        <section id="mission" class="max-w-6xl mx-auto my-20 px-5">
+            <div class="bg-glass-effect backdrop-blur-xl border border-maroon border-opacity-10 rounded-2xl p-10 shadow-2xl"
+                data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-maroon mb-8 uppercase">OUR MISSION</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center p-6 bg-white bg-opacity-50 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2"
+                        data-aos="fade-up" data-aos-delay="50">
+                        <h3 class="text-xl font-semibold mb-3">Student Leadership</h3>
+                        <p class="text-sm">Empower peers through example, guidance, and a strong sense of
+                            responsibility.</p>
+                    </div>
+                    <div class="text-center p-6 bg-white bg-opacity-50 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-xl font-semibold mb-3">Community Service</h3>
+                        <p class="text-sm">Build a supportive and inclusive school environment for all learners.</p>
+                    </div>
+                    <div class="text-center p-6 bg-white bg-opacity-50 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2"
+                        data-aos="fade-up" data-aos-delay="150">
+                        <h3 class="text-xl font-semibold mb-3">Academic Integrity</h3>
+                        <p class="text-sm">Promote fairness, honest effort, and excellence in every school activity.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="leadership" class="leadership-section">
-            <div class="container">
-                <h2 class="section-title centered">THE TOP BOARD</h2>
-                <div class="top-board-grid">
-                    <div class="leader-profile" data-aos="zoom-in">
-                        <div class="image-container">
-                            <img src="Assets/W.Maleesha Pramod.jpg" alt="Head Prefect W. Maleesha Pramod" loading="lazy">
+        <section id="projects" class="max-w-6xl mx-auto my-20 px-5">
+            <div class="bg-glass-effect backdrop-blur-xl border border-maroon border-opacity-10 rounded-2xl p-10 shadow-2xl"
+                data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-maroon mb-8 uppercase text-center">OUR PROJECTS</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="text-center p-6 bg-white bg-opacity-50 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2"
+                        data-aos="fade-up" data-aos-delay="50">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-maroon rounded-full flex items-center justify-center">
+                            <span class="text-white text-2xl">🏆</span>
                         </div>
-                        <h3>W. Maleesha Pramod</h3>
-                        <p class="post">Head Prefect</p>
+                        <h3 class="text-xl font-semibold mb-3">Annual Sports Meet</h3>
+                        <p class="text-sm">Organizing inter-house competitions to promote physical fitness and teamwork
+                            among students.</p>
+                        <a href="projects.html#sports"
+                            class="inline-block mt-4 text-maroon font-medium hover:text-gold transition duration-300">Learn
+                            More</a>
                     </div>
-                    <div class="leader-profile" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="image-container">
-                            <img src="Assets/R.A.Thenuki Malshika.jpg" alt="Head Prefect R.A. Thenuki Malshika" loading="lazy">
+                    <div class="text-center p-6 bg-white bg-opacity-50 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-maroon rounded-full flex items-center justify-center">
+                            <span class="text-white text-2xl">🌿</span>
                         </div>
-                        <h3>R.A. Thenuki Malshika</h3>
-                        <p class="post">Head Prefect</p>
+                        <h3 class="text-xl font-semibold mb-3">Community Clean-up</h3>
+                        <p class="text-sm">Leading environmental initiatives to keep our school and neighborhood clean
+                            and green.</p>
+                        <a href="projects.html#cleanup"
+                            class="inline-block mt-4 text-maroon font-medium hover:text-gold transition duration-300">Learn
+                            More</a>
                     </div>
-                    <div class="leader-profile" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="image-container">
-                            <img src="Assets/_MG_1289.jpg" alt="Senior Deputy Head Prefect Ridmi Navodya" loading="lazy">
+                    <div class="text-center p-6 bg-white bg-opacity-50 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2"
+                        data-aos="fade-up" data-aos-delay="150">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-maroon rounded-full flex items-center justify-center">
+                            <span class="text-white text-2xl">📚</span>
                         </div>
-                        <h3>Ridmi Navodya</h3>
-                        <p class="post">Senior Deputy Head Prefect</p>
+                        <h3 class="text-xl font-semibold mb-3">Leadership Workshops</h3>
+                        <p class="text-sm">Conducting training sessions to develop leadership skills and personal growth
+                            in students.</p>
+                        <a href="projects.html#workshops"
+                            class="inline-block mt-4 text-maroon font-medium hover:text-gold transition duration-300">Learn
+                            More</a>
                     </div>
+                </div>
+                <div class="text-center mt-8">
+                    <a href="projects.html"
+                        class="bg-maroon text-white px-6 py-3 rounded-lg font-medium hover:bg-gold hover:text-black transition duration-300 transform hover:scale-105 shadow-lg">View
+                        All Projects</a>
                 </div>
             </div>
         </section>
 
-        <section id="events" class="events-section" data-aos="fade-up">
-            <div class="container">
-                <h2 class="section-title centered">Events & Activities</h2>
-                <div class="events-grid">
-                    <article class="event-card" data-aos="fade-right">
-                        <span class="event-badge">Upcoming</span>
-                        <h3>Leadership Training Camp</h3>
-                        <p>A one-day camp focused on team leadership and communication drills.</p>
-                        <p class="event-meta"><strong>Date:</strong> May 20, 2026</p>
-                    </article>
-                    <article class="event-card" data-aos="fade-up">
-                        <span class="event-badge">Preview</span>
-                        <h3>Community Service Drive</h3>
-                        <p>Volunteering with local partners to support school cleanliness and civic responsibility.</p>
-                        <p class="event-meta"><strong>Location:</strong> Dharmapala Vidyalaya Campus</p>
-                    </article>
-                    <article class="event-card" data-aos="fade-left">
-                        <span class="event-badge">Activities</span>
-                        <h3>Prefect Roundtable</h3>
-                        <p>Weekly sessions where prefects discuss campus welfare and discipline plans.</p>
-                        <p class="event-meta"><strong>Frequency:</strong> Weekly</p>
-                    </article>
+        <section id="leadership" class="max-w-7xl mx-auto my-16 sm:my-20 px-4 sm:px-5">
+            <h2 class="text-2xl sm:text-3xl font-bold text-center text-maroon mb-8 sm:mb-10 uppercase" data-aos="fade-down">THE TOP BOARD
+            </h2>
+            <div class="stage bg-glass-effect backdrop-blur-xl border border-maroon border-opacity-10 rounded-xl sm:rounded-2xl p-6 sm:p-10 shadow-2xl"
+                data-aos="fade-up">
+                <!-- Head Prefects - 2 Column Grid on Mobile, Flexible on Larger -->
+                <div class="mb-8 sm:mb-10">
+                    <div class="text-center mb-4 sm:mb-0">
+                        <h3 class="text-lg sm:text-xl font-semibold text-purple mb-6 sm:mb-8">Head Prefects</h3>
+                    </div>
+                    <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 justify-center">
+                        <div class="text-center" data-aos="fade-up" data-aos-delay="50">
+                            <div class="w-28 sm:w-36 lg:w-40 h-28 sm:h-36 lg:h-40 mx-auto mb-3 sm:mb-4 rounded-full border-3 sm:border-4 border-purple overflow-hidden p-1 bg-white shadow-md">
+                                <img src="assets/leader1.png" alt="Head Prefect Male"
+                                    class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <h4 class="text-sm sm:text-base lg:text-lg font-semibold mb-1">Name Surname</h4>
+                            <p class="text-purple font-bold text-xs sm:text-sm">Head Prefect (Male)</p>
+                        </div>
+                        <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                            <div class="w-28 sm:w-36 lg:w-40 h-28 sm:h-36 lg:h-40 mx-auto mb-3 sm:mb-4 rounded-full border-3 sm:border-4 border-purple overflow-hidden p-1 bg-white shadow-md">
+                                <img src="assets/leader2.png" alt="Head Prefect Female"
+                                    class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <h4 class="text-sm sm:text-base lg:text-lg font-semibold mb-1">Name Surname</h4>
+                            <p class="text-purple font-bold text-xs sm:text-sm">Head Prefect (Female)</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="events-cta">
-                    <a href="events.html" class="btn-traditional">Explore Full Events Page</a>
+
+                <!-- Senior Deputy Head Prefects - 2 Column Grid -->
+                <div class="mb-8 sm:mb-10">
+                    <div class="text-center mb-4 sm:mb-0">
+                        <h3 class="text-lg sm:text-xl font-semibold text-purple mb-6 sm:mb-8">Senior Deputy Head Prefects</h3>
+                    </div>
+                    <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 justify-center">
+                        <div class="text-center" data-aos="fade-up" data-aos-delay="150">
+                            <div class="w-24 sm:w-32 lg:w-36 h-24 sm:h-32 lg:h-36 mx-auto mb-3 sm:mb-4 rounded-full border-3 sm:border-4 border-purple overflow-hidden p-1 bg-white shadow-md">
+                                <img src="assets/leader3.png" alt="Senior Deputy Head Prefect Male"
+                                    class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <h4 class="text-xs sm:text-sm lg:text-base font-semibold mb-1">Name Surname</h4>
+                            <p class="text-purple font-bold text-xs">Senior Deputy (Male)</p>
+                        </div>
+                        <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                            <div class="w-24 sm:w-32 lg:w-36 h-24 sm:h-32 lg:h-36 mx-auto mb-3 sm:mb-4 rounded-full border-3 sm:border-4 border-purple overflow-hidden p-1 bg-white shadow-md">
+                                <img src="assets/leader4.png" alt="Senior Deputy Head Prefect Female"
+                                    class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <h4 class="text-xs sm:text-sm lg:text-base font-semibold mb-1">Name Surname</h4>
+                            <p class="text-purple font-bold text-xs">Senior Deputy (Female)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deputy Head Prefects - 2 Column on Mobile, 4 Column on Desktop -->
+                <div>
+                    <div class="text-center mb-4 sm:mb-0">
+                        <h3 class="text-lg sm:text-xl font-semibold text-purple mb-6 sm:mb-8">Deputy Head Prefects</h3>
+                    </div>
+                    <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
+                        <div class="text-center" data-aos="fade-up" data-aos-delay="250">
+                            <div class="w-20 sm:w-28 lg:w-32 h-20 sm:h-28 lg:h-32 mx-auto mb-2 sm:mb-3 rounded-full border-3 sm:border-4 border-purple overflow-hidden p-1 bg-white shadow-md">
+                                <img src="assets/leader5.png" alt="Deputy Head Prefect 1 Male"
+                                    class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <h4 class="text-xs sm:text-sm font-semibold mb-1">Name Surname</h4>
+                            <p class="text-purple font-bold text-xs">Deputy 1 (Male)</p>
+                        </div>
+                        <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                            <div class="w-20 sm:w-28 lg:w-32 h-20 sm:h-28 lg:h-32 mx-auto mb-2 sm:mb-3 rounded-full border-3 sm:border-4 border-purple overflow-hidden p-1 bg-white shadow-md">
+                                <img src="assets/leader6.png" alt="Deputy Head Prefect 1 Female"
+                                    class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <h4 class="text-xs sm:text-sm font-semibold mb-1">Name Surname</h4>
+                            <p class="text-purple font-bold text-xs">Deputy 1 (Female)</p>
+                        </div>
+                        <div class="text-center" data-aos="fade-up" data-aos-delay="350">
+                            <div class="w-20 sm:w-28 lg:w-32 h-20 sm:h-28 lg:h-32 mx-auto mb-2 sm:mb-3 rounded-full border-3 sm:border-4 border-purple overflow-hidden p-1 bg-white shadow-md">
+                                <img src="assets/leader7.png" alt="Deputy Head Prefect 2 Male"
+                                    class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <h4 class="text-xs sm:text-sm font-semibold mb-1">Name Surname</h4>
+                            <p class="text-purple font-bold text-xs">Deputy 2 (Male)</p>
+                        </div>
+                        <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                            <div class="w-20 sm:w-28 lg:w-32 h-20 sm:h-28 lg:h-32 mx-auto mb-2 sm:mb-3 rounded-full border-3 sm:border-4 border-purple overflow-hidden p-1 bg-white shadow-md">
+                                <img src="assets/leader8.png" alt="Deputy Head Prefect 2 Female"
+                                    class="w-full h-full object-cover rounded-full">
+                            </div>
+                            <h4 class="text-xs sm:text-sm font-semibold mb-1">Name Surname</h4>
+                            <p class="text-purple font-bold text-xs">Deputy 2 (Female)</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <p class="text-center mt-6 sm:mt-8 text-xs sm:text-sm text-gray-600">And additional executive members supporting our initiatives.</p>
         </section>
 
-        <section id="contact" class="contact-section" data-aos="fade-up">
-            <div class="container">
-                <h2 class="section-title centered">Contact Us</h2>
-                <div class="contact-info-panel centered">
-                    <div class="info-header">
-                        <h3>Reach Out to the Guild</h3>
-                        <p>We are here to answer your questions and hear your feedback regarding student welfare and leadership.</p>
-                    </div>
-
-                    <div class="info-list">
-                        <div class="info-item">
-                            <div class="icon-box">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                </svg>
+        <section id="contact" class="max-w-6xl mx-auto my-20 px-5">
+            <div class="bg-glass-effect backdrop-blur-xl border border-maroon border-opacity-10 rounded-2xl p-10 shadow-2xl"
+                data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-maroon mb-8 uppercase text-center">GET IN TOUCH</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div>
+                        <h3 class="text-xl font-semibold text-maroon mb-4">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-maroon rounded-full flex items-center justify-center mr-4">
+                                    <span class="text-white text-lg">📧</span>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Email</p>
+                                    <a href="mailto:email@dharmapala.lk"
+                                        class="text-text-dark hover:text-maroon transition duration-300">email@dharmapala.lk</a>
+                                </div>
                             </div>
-                            <div class="info-text">
-                                <p class="label">Email Address</p>
-                                <a href="mailto:prefectsguild@dharmapalavidyalaya.lk">prefectsguild@dharmapalavidyalaya.lk</a>
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-maroon rounded-full flex items-center justify-center mr-4">
+                                    <span class="text-white text-lg">📍</span>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Address</p>
+                                    <p class="text-sm">Dharmapala Vidyalaya,<br>High Level Rd, Pannipitiya.</p>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="info-item">
-                            <div class="icon-box">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                </svg>
-                            </div>
-                            <div class="info-text">
-                                <p class="label">Location</p>
-                                <span>Dharmapala Vidyalaya, Pannipitiya, Sri Lanka</span>
-                            </div>
-                        </div>
-
-                        <div class="info-item">
-                            <div class="icon-box">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-                            <div class="info-text">
-                                <p class="label">Office Hours</p>
-                                <span>Monday - Friday, 7:30 AM - 2:30 PM</span>
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-maroon rounded-full flex items-center justify-center mr-4">
+                                    <span class="text-white text-lg">📞</span>
+                                </div>
+                                <div>
+                                    <p class="font-medium">Phone</p>
+                                    <p class="text-sm">+94 XX XXX XXXX</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="social-panel">
-                        <h4>Follow Us</h4>
-                        <div class="social-icons">
-                            <a href="#" aria-label="Facebook">FB</a>
-                            <a href="#" aria-label="Instagram">IG</a>
-                            <a href="#" aria-label="YouTube">YT</a>
-                            <a href="#" aria-label="TikTok">TK</a>
+                        <div class="mt-6">
+                            <h4 class="font-semibold text-maroon mb-3">Follow Us</h4>
+                            <div class="flex gap-3">
+                                <a href="#"
+                                    class="bg-maroon text-white px-4 py-2 rounded-lg text-sm hover:bg-gold hover:text-black transition duration-300 transform hover:scale-110 shadow-md">Facebook</a>
+                                <a href="#"
+                                    class="bg-maroon text-white px-4 py-2 rounded-lg text-sm hover:bg-gold hover:text-black transition duration-300 transform hover:scale-110 shadow-md">Instagram</a>
+                                <a href="#"
+                                    class="bg-maroon text-white px-4 py-2 rounded-lg text-sm hover:bg-gold hover:text-black transition duration-300 transform hover:scale-110 shadow-md">YouTube</a>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="guild-seal">
-                        <img src="Assets/pglogo.png" alt="Guild Seal" loading="lazy">
+                    <div>
+                        <h3 class="text-xl font-semibold text-maroon mb-4">Send us a Message</h3>
+                        <form class="space-y-4">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <input type="text" placeholder="Your Name"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-maroon focus:border-transparent">
+                                <input type="email" placeholder="Your Email"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-maroon focus:border-transparent">
+                            </div>
+                            <input type="text" placeholder="Subject"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-maroon focus:border-transparent">
+                            <textarea placeholder="Your Message" rows="4"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-maroon focus:border-transparent"></textarea>
+                            <button type="submit"
+                                class="bg-maroon text-white px-6 py-3 rounded-lg font-medium hover:bg-gold hover:text-black transition duration-300 transform hover:scale-105 shadow-lg">Send
+                                Message</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="academic-footer">
-        <div class="container footer-grid">
-            <div class="footer-info">
-                <h3>CONTACT US</h3>
-                <p>📍 Dharmapala Vidyalaya, Pannipitiya, Sri Lanka</p>
-                <p>📧 prefectsguild@dharmapalavidyalaya.lk</p>
+    <footer class="relative bg-white text-text-dark py-16 border-t-4 border-maroon">
+        <div class="relative z-10 max-w-7xl mx-auto px-5">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+                <!-- Brand Section -->
+                <div class="text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start mb-3">
+                        <img src="assets/pglogo.png" alt="Guild Logo" class="w-20 h-20">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-maroon">PREFECTS' GUILD</h3>
+                    <p class="text-sm text-gray-600">Leading with purpose, integrity, and community spirit.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="text-center">
+                    <h4 class="font-semibold mb-4 text-lg text-maroon">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-text-dark">
+                        <li><a href="#home" class="hover:text-maroon transition duration-300 font-medium">Home</a></li>
+                        <li><a href="#about" class="hover:text-maroon transition duration-300 font-medium">About</a>
+                        </li>
+                        <li><a href="#leadership"
+                                class="hover:text-maroon transition duration-300 font-medium">Leadership</a></li>
+                        <li><a href="#projects"
+                                class="hover:text-maroon transition duration-300 font-medium">Projects</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="text-center md:text-right">
+                    <h4 class="font-semibold mb-4 text-lg text-maroon">Contact Us</h4>
+                    <p class="text-sm mb-2 text-text-dark">📧 email@dharmapala.lk</p>
+                    <p class="text-sm mb-4 text-text-dark">📍 High Level Rd, Pannipitiya</p>
+                    <div class="flex gap-3 justify-center md:justify-end">
+                        <a href="#"
+                            class="w-10 h-10 bg-maroon rounded-full flex items-center justify-center text-white hover:bg-gold hover:text-maroon hover:scale-110 transition duration-300"
+                            title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-maroon rounded-full flex items-center justify-center text-white hover:bg-gold hover:text-maroon hover:scale-110 transition duration-300"
+                            title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 bg-maroon rounded-full flex items-center justify-center text-white hover:bg-gold hover:text-maroon hover:scale-110 transition duration-300"
+                            title="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="footer-links">
-                <h3>QUICK LINKS</h3>
-                <a href="https://www.dharmapalavidyalaya.org/">School Website</a>
-                <a href="events.html">Events & Activities</a>
-                <a href="past-committees.html">Past Committees</a>
+
+            <!-- Divider -->
+            <div class="border-t border-maroon border-opacity-20 pt-8">
+                <p class="text-center text-sm text-gray-600">
+                    &copy; 2026 Dharmapala Vidyalaya Prefects' Guild. All rights reserved. | Designed by Bashana.
+                </p>
             </div>
-        </div>
-        <div class="footer-bottom">
-            &copy; 2026 Prefects' Guild - Dharmapala Vidyalaya. All Rights Reserved.
         </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 800, once: true });
+        AOS.init({ duration: 1000, once: true });
 
-        // Mobile menu functionality
-        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-        const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
-
-        mobileMenuToggle.addEventListener('click', () => {
-            mobileMenuToggle.classList.toggle('active');
-            mobileMenuOverlay.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking on a link
-        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-overlay .nav-links a');
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenuToggle.classList.remove('active');
-                mobileMenuOverlay.classList.remove('active');
-            });
-        });
-
-        // Close mobile menu when clicking outside
-        mobileMenuOverlay.addEventListener('click', (e) => {
-            if (e.target === mobileMenuOverlay) {
-                mobileMenuToggle.classList.remove('active');
-                mobileMenuOverlay.classList.remove('active');
-            }
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                setTimeout(() => loader.style.display = 'none', 500);
+            }, 1500);
         });
     </script>
 </body>
